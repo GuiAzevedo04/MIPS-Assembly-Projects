@@ -97,7 +97,6 @@ main:
     syscall
 
 deltaMenorQueZero:
-    # Imprimir mensagem de raízes complexas
     li $v0, 4
     la $a0, msgDeltaMenorQueZero
     syscall 
