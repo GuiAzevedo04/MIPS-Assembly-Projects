@@ -1,8 +1,3 @@
-# Title: Cálculo da Soma de uma Série
-# Description: Calcula a soma descrita (1/n) + (2/(n-1)) + ... + (n/1) para um valor de entrada n
-# Input: Um inteiro positivo n
-# Output: Resultado da soma
-
 ################# Segmento de Dados #####################
 .data
     msgPromptN:     .asciiz "Digite um inteiro positivo n: "
