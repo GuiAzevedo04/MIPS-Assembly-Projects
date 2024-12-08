@@ -9,7 +9,7 @@
 main:
     # Mensagem inicial
     li $v0, 4 		       # imprimir string
-    la $a0, msgIncial         # carrega mensagem declarada
+    la $a0, msgInicial         # carrega mensagem declarada
     syscall
 
     # Leitura de n
