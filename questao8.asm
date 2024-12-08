@@ -15,7 +15,7 @@
 .text
 .globl main
 main:
-    # Leitura de a, mrmazenando em $f2
+    # Leitura de a, armazenado em $f2
     li $v0, 4
     la $a0, mensagemEntradaA
     syscall
@@ -42,7 +42,7 @@ main:
     syscall
     mov.s $f4, $f0
     
-    # Calcular delta
+    # Calcular delta em f7
     mul.s $f5, $f2, $f4   # a * c
     l.s $f6, quatroDelta  # 4.0
     mul.s $f5, $f5, $f6   # 4ac
@@ -54,18 +54,18 @@ main:
     c.lt.s $f7, $f8       
     bc1t deltaMenorQueZero
     
-    # Raízes reais
+    # Calcular raizes
     sqrt.s $f7, $f7        # raiz de delta
     l.s $f8, menosUmDelta  # -1.0
     mul.s $f9, $f3, $f8    # -b
     l.s $f10, doisDelta    # 2.0
     mul.s $f11, $f2, $f10  # 2a
     
-    # Calcula primeira raiz
+    # Calcula raiz 1
     add.s $f12, $f9, $f7   # -b + raiz de delta
     div.s $f12, $f12, $f11 # dividido por 2a
     
-    # Calcula segunda raiz
+    # Calcula raiz 2
     sub.s $f13, $f9, $f7   # -b - raiz de delta
     div.s $f13, $f13, $f11 # dividido por 2a
     
